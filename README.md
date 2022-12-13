@@ -1,14 +1,41 @@
 # Information
+
     --------------------- DEMO MODULE FEDERATION WEBPACK - ANGULAR  ---------------------
     Usando el enfoque monorepo, donde todos los proyectos angular estarán en un repositorio.
 
+# Pre Requirements
+
+    Angular CLI: 14.2.10
+    Node: 16.14.2
+    Package Manager: npm 8.5.0
+    OS: win32 x64
+
+    Angular: 14.2.12
+    ... animations, common, compiler, compiler-cli, core, forms
+    ... platform-browser, platform-browser-dynamic, router
+
+    Package                         Version
+    ---------------------------------------------------------
+    @angular-devkit/architect       0.1402.10
+    @angular-devkit/build-angular   14.2.10
+    @angular-devkit/core            14.2.10
+    @angular-devkit/schematics      14.2.10
+    @angular/cli                    14.2.10
+    @schematics/angular             14.2.10
+    ng-packagr                      14.2.2
+    rxjs                            7.5.7
+    typescript                      4.7.4
+
 # DemoModuleFederationAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run all` for a dev server. To run the shell project and the other microfrontends
+    -- Shell App - Host
+    -- Login App - Remote
+    -- Pokemons App - Remote
 
 ## Code scaffolding
 
@@ -33,3 +60,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Owner
 
 Hernan Bracamonte
+website: https://www.linkedin.com/in/hernanbracamonte/
