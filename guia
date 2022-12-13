@@ -32,8 +32,6 @@ Orquestador:
 
 
 
-
-
 5. Extendiendo al proyecto de Shell
 	ng add @angular-architects/module-federation --project mf-shell --port 4200 --type host
 	Host : es el proyecto que orquesta a los demas microfrontend
@@ -45,10 +43,11 @@ Orquestador:
 
 
 Modificamos mf-login/webpack.config.js
-	exposes: {
-    	'LoginModule': './projects/mf-login/src/app/app.module.ts',
- 	 },
+	  exposes: {
+      "./LoginModule": "./projects/mf-login/src/app/login/login.module.ts",
+    },
 Modificamos mf-pokemons/webpack.config.js
-	exposes: {
-    	'PokemonsModule': './projects/mf-pokemons/src/app/app.module.ts',
- 	 },
+    exposes: {
+      "./PokemonModule":
+        "./projects/mf-pokemons/src/app/pokemon/pokemon.module.ts",
+    },
