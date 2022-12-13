@@ -61,3 +61,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Hernan Bracamonte
 website: https://www.linkedin.com/in/hernanbracamonte/
+
+## References
+https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/
+
+
