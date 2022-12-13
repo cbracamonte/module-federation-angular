@@ -1,0 +1,12 @@
+<h1>Microfrontend Pokemons</h1>
+<hr />
+<section *ngIf="listPokemons">
+  <h2>Lista de Pokemones</h2>
+  <p>Total Pokemones: {{ listPokemons.count }}</p>
+  <ul>
+    <li *ngFor="let pokemon of listPokemons.results">
+      {{ pokemon.name }}
+    </li>
+  </ul>
+  <button (click)="nextPokemons(listPokemons.next)">Cargar Más</button>
+</section>

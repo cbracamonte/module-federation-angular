@@ -1,0 +1,19 @@
+<h1>Microfrontend Login</h1>
+<hr />
+<div class="login-page">
+  <div class="form">
+    <form [formGroup]="formLogin" class="login-form" (ngSubmit)="submitForm()">
+      <input
+        type="text"
+        placeholder="username"
+        [formControlName]="'username'"
+      />
+      <input
+        type="password"
+        placeholder="password"
+        [formControlName]="'password'"
+      />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

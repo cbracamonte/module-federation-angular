@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggler" data-toggle="open-navbar1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a>
+        <h4>MF-SHELL<span></span></h4>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="open-navbar1">
+      <ul class="navbar-nav">
+        <li class="active"><a>Home</a></li>
+        <li class="navbar-dropdown">
+          <a [routerLink]="['/login']" fragment="login">Login</a>
+        </li>
+        <li class="navbar-dropdown">
+          <a [routerLink]="['/pokemons']" fragment="pokemon"
+            >Pokemons</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

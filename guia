@@ -1,0 +1,54 @@
+
+1. create repository:
+	ng new demo-module-federation-angular --create-application=false
+
+
+CASO DE USO:
+	Necesito una aplicación tipo Microfrontend para visualizar el api de pokemon en un tab que diga Pokemones y tenga su autheticacion y que estas compartan dicho estado
+de la autenticación
+
+
+Componentes:
+	Login -> MFE Login
+	Pokemones -> MFE Pokemones
+
+Orquestador:
+	Shell
+
+2. Creamos nuestros proyectos angular ( futuro microfrontends )
+	2.1. ng generate application mf-shell --style=scss --routing=true --> Proyecto Shell o Main que se encarga de orquestar otros microfrontends en base a sus modulos
+	2.1. ng generate application mf-login --style=scss --routing=true -> Proyecto para la vista de la autenticación
+	2.2. ng generate application mf-pokemons --style=scss --routing=true -> Proyecto para la vista de los pokemones
+
+
+3. Creación del broadcast ( Creamos un proyecto de tipo libreria para la comunicación entre microfrontends o aplicaciones )
+	3.1. ng generate library commons-lib
+
+
+
+4. Convertir un proyecto angular a un proyecto tipo module federation -> Involucra tocar parte de la arquitectura de angular y añadir funcionalidades al webpack de la aplicación
+	gracias a los amigos de @angular/architect y la lib se llama: module-federation
+	4.1 npm i -D @angular-architects/module-federation
+
+
+
+
+
+5. Extendiendo al proyecto de Shell
+	ng add @angular-architects/module-federation --project mf-shell --port 4200 --type host
+	Host : es el proyecto que orquesta a los demas microfrontend
+
+6. Extendiendo a todos los microfrontends que creemos
+	ng add @angular-architects/module-federation --project mf-login --port 4201 --type remote
+	ng add @angular-architects/module-federation --project mf-pokemons --port 4202 --type remote
+	Indicamos como es el nombre de los proyectos a ser migrados como microfrontends y le indicamos el flag remote
+
+
+Modificamos mf-login/webpack.config.js
+	exposes: {
+    	'LoginModule': './projects/mf-login/src/app/app.module.ts',
+ 	 },
+Modificamos mf-pokemons/webpack.config.js
+	exposes: {
+    	'PokemonsModule': './projects/mf-pokemons/src/app/app.module.ts',
+ 	 },
